@@ -25,6 +25,14 @@ export class ListadoComponent implements OnInit {
       ;})
   }
 
+  enviarPos():void{
+
+    this.http.post<estudiante>('https://frozen-meadow-48728.herokuapp.com/registrar',this.usuario)
+    .subscribe(response=>{
+      console.log(response);
+    });
+  }
+
   
 
   ngOnInit(): void {
